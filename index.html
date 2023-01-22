@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1 class="titulo">código secreto</h1>
 
-  <main class="main">
-    <section class="form box">
-      <form action="">
-        <label for="input-texto">Apenas letras minúsculas, sem acento</label>
-        <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="insira o texto aqui">
-        <input class="btn" type="submit" value="criptografar!" id="btn-cripto">
-        <input class="btn" type="submit" value="descriptografar!" id="btn-descripto">
-      </form>
-    </section>
-  
-    <section class="msg box">
-      <h2 id="">Mensagem criptografada:</h2>
-      <input class="text-input" type="text" id="msg"></input>
-      <input class="btn" type="submit" value="copiar" id="btn-copy">
-    </section>
-  </main>
+<html lang="en">
 
-  <script src="script.js"></script>
-</body>
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="/reset.css/reset.css">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <img class="logo" src="pictures/Logo.png" alt="alura logo">
+    
+    </header>
+
+
+
+    <main class="main">
+
+      <div class="boxes">
+
+
+        
+        <section class= " primarybox">
+          
+          <img src="/pictures/High quality products 1 1.svg">
+          
+          <form action="">
+            
+            <textarea class="text-input" cols="65" rows="10" id="input-texto" placeholder="Insert text here"></textarea>
+
+            <div class="primaryboxbtn">
+
+              <input class="btn" type="submit" value="Encrypt!" id="btn-cripto">
+              
+              <input class="btn" type="submit" value="Deencrypt!" id="btn-descripto">
+              
+            </div>
+            
+          </form>
+          
+
+        </section>
+        
+        
+
+        <section class="msgbox">
+          
+          <h2 id="">Encrypted Message:</h2>
+          
+          <textarea class="text-input" cols="40" rows="30" id="msg"></textarea>
+
+          
+          <input class="btn" type="submit" value="Copiar" id="btn-copy">
+          
+        </section>
+
+
+
+        
+      </div>
+
+
+
+    </main>
+
+
+
+
+    <script src="script.js"></script>
+
+  </body>
+
 </html>
