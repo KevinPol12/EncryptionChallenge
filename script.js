@@ -24,7 +24,10 @@ var texto = document.querySelector("#input-texto");
 
 var msg = document.querySelector("#msg");
 
+let copied = document.querySelector("#msg");
+
 let encriptado = "";
+let decrypted = "";
 
 
 document.querySelector("#btn-crypt").addEventListener("click", function(){
@@ -34,7 +37,6 @@ document.querySelector("#btn-crypt").addEventListener("click", function(){
     msg.value = "";
 
     for (i = 0; i < textE.length; i++){
-        console.log("length is " +textE.length);
 
         switch(textE[i]){
             case "a": 
@@ -64,15 +66,75 @@ document.querySelector("#btn-crypt").addEventListener("click", function(){
 
         } //end for
 
-                
-        console.log(encriptado);
-
         msg.value = encriptado;
 
         texto.value="";
         texto.focus();
 
 });
+
+document.querySelector("#btn-copy").addEventListener("click", function(){
+
+    navigator.clipboard.writeText(copied.value);
+    texto.focus();
+    texto.value = copied.value;
+    copied.value="";
+
+});
+
+document.querySelector("#btn-decrypt").addEventListener("click", function(){
+    let textD = texto.value;
+    decrypted = "";
+    // let textD = "aentera";
+
+
+    for (i =0; i < textD.length; i++){
+
+
+        if (textD.substring(i,(i+2)) == "ai"){
+
+            decrypted += "a";
+            i++;
+        }
+
+        else if (textD.substring(i,(i+5)) == "enter"){
+
+            decrypted += "e";
+            i=i+4;
+        }
+        else if (textD.substring(i,(i+4)) == "imes"){
+
+            decrypted += "i";
+            i=i+3;
+        }
+        else if (textD.substring(i,(i+4)) == "ober"){
+
+            decrypted += "o";
+            i=i+3;
+        }
+        else if (textD.substring(i,(i+4)) == "ufat"){
+
+            decrypted += "u";
+            i=i+3;
+        } 
+        else {
+            
+            decrypted += textD[i];
+
+        }
+
+        console.log("descrypted: " + decrypted);
+
+
+    } // end for
+
+    msg.value = decrypted;
+    texto.value="";
+    texto.focus();
+
+
+});
+
 
 
 
