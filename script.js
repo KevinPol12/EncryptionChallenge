@@ -26,6 +26,8 @@ var msg = document.querySelector("#msg");
 
 let copied = document.querySelector("#msg");
 
+var encdec = document.querySelector("#enc-dec");
+
 let encriptado = "";
 let decrypted = "";
 
@@ -66,10 +68,13 @@ document.querySelector("#btn-crypt").addEventListener("click", function(){
 
         } //end for
 
+        encdec.textContent = "Encrypted Message";
+
         msg.value = encriptado;
 
         texto.value="";
         texto.focus();
+
 
 });
 
@@ -79,6 +84,7 @@ document.querySelector("#btn-copy").addEventListener("click", function(){
     texto.focus();
     texto.value = copied.value;
     copied.value="";
+    encdec.textContent = "Holding tight...";
 
 });
 
@@ -127,6 +133,9 @@ document.querySelector("#btn-decrypt").addEventListener("click", function(){
 
 
     } // end for
+
+    
+    encdec.textContent = "Decrypted Message";
 
     msg.value = decrypted;
     texto.value="";
